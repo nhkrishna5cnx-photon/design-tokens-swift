@@ -1,0 +1,34 @@
+name: Auto Sync Design Tokens
+
+on:
+  push:
+    paths:
+      - "FigmaTokens/*.json"
+  workflow_dispatch:
+
+jobs:
+  build-tokens:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Swift Tokens
+        run: npm run build
+
+      - name: Commit & Push Updated Swift Tokens
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "actions@github.com"
+          git add ios/Sources/DesignTokens/DesignTokens.swift
+          git commit -m "Auto-update Swift Design Tokens" || echo "No changes"
+          git push
