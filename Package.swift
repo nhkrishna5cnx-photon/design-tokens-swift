@@ -1,25 +1,55 @@
-// swift-tools-version: 6.0
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+// swift-tools-version: 5.9
 
 import PackageDescription
 
 let package = Package(
-    name: "GSKComponentLibrary",
-    platforms: [.iOS(.v15)],
-    products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "GSKComponentLibrary",
-            targets: ["GSKComponentLibrary"]),
+    name: "GSKDesignSystem",
+    
+    platforms: [
+        .iOS(.v15)
     ],
-    targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "GSKComponentLibrary"),
-        .testTarget(
-            name: "GSKComponentLibraryTests",
-            dependencies: ["GSKComponentLibrary"]
+    
+    products: [
+        // ✅ Public Tokens Module
+        .library(
+            name: "DesignTokens",
+            targets: ["DesignTokens"]
         ),
+        
+        // ✅ Public Utilities Module
+        .library(
+            name: "Utilities",
+            targets: ["Utilities"]
+        ),
+        
+        // ✅ Public Button Component Module
+        .library(
+            name: "GSKButtonComponent",
+            targets: ["GSKButtonComponent"]
+        )
+    ],
+    
+    targets: [
+        // ✅ Design Tokens Target
+        .target(
+            name: "DesignTokens",
+            path: "Sources/DesignTokens"
+        ),
+        
+        // ✅ Utilities Target
+        .target(
+            name: "Utilities",
+            path: "Sources/Utilities"
+        ),
+        
+        // ✅ Button Component Target (Depends on Tokens + Utilities)
+        .target(
+            name: "GSKButtonComponent",
+            dependencies: [
+                "DesignTokens",
+                "Utilities"
+            ],
+            path: "Sources/GSKButtonComponent"
+        )
     ]
 )
