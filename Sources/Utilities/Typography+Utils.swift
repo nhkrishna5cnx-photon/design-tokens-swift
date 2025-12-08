@@ -1,7 +1,7 @@
 import SwiftUI
 
-extension ButtonVariant {
-    public var font: Font {
+public extension ButtonVariant {
+    var font: Font {
         switch self {
         case .primary:
             return .system(size: 17, weight: .bold, design: .default)

@@ -1,7 +1,7 @@
 import SwiftUI
 
-extension ButtonVariant {
-    public var borderLine: some View {
+public extension ButtonVariant {
+    var borderLine: some View {
         switch self {
             
         case .primary:
