@@ -1,10 +1,11 @@
 import SwiftUI
+import DesignTokens
 
 public extension ButtonVariant {
     var font: Font {
         switch self {
         case .primary:
-            return .system(size: 17, weight: .bold, design: .default)
+            return .custom(DesignTokens.Font.family.font_family_body, size: 16)
         case .secondary:
             return .system(size: 17, weight: .medium, design: .default)
         case .tertiary:

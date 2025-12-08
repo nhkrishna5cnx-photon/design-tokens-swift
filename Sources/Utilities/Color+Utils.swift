@@ -14,7 +14,7 @@ public enum ButtonVariant {
     
     public var background: Color {
         switch self {
-        case .primary: return Color(rgbaString: DesignTokens.Colors.Background.bg_brand_section)!
+        case .primary: return Color(rgbaString: DesignTokens.Colors.Brand._600)!
         case .secondary: return Color(rgbaString: DesignTokens.Colors.Background.bg_primary)!
         case .tertiary: return Color(rgbaString: DesignTokens.Colors.Background.bg_primary)!
         case .link_gray: return Color(rgbaString: DesignTokens.Colors.Background.bg_primary)!

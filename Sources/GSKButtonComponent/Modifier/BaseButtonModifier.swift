@@ -22,7 +22,7 @@ struct BaseButtonModifier: ViewModifier {
             .padding(.horizontal, size.horizontalPadding)
             .background(variant.background)
             .foregroundColor(variant.foreground)
-            .clipShape(RoundedRectangle(cornerRadius: 8))
+            .clipShape(variant.radius)
             .padding(isLineEnable ? 3 : 0)
             .overlay {
                 if isLineEnable {
