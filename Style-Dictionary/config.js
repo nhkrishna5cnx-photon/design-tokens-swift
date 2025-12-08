@@ -13,12 +13,11 @@ StyleDictionary.registerTransformGroup({
 });
 
 export default {
-  source: [ "tokens/design-tokens.dtcg.json",
-            "tokens/figma-variables.json"],
+  source: [ "tokens/design-tokens.dtcg.json" ],
   platforms: {
     swiftui: {
       transformGroup: "swiftui",
-      buildPath: "../GSKComponentLibrary/Sources/GSKComponentLibrary/Tokens/",
+      buildPath: "../Sources/DesignToken/",
         files: [{
             destination: "DesignTokens.swift",
             format: "swiftui/tokens"
