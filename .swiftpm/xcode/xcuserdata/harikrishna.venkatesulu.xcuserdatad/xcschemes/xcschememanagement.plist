@@ -42,6 +42,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>DesignTokens</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>GSKButtonComponent</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>GSKComponentLibrary</key>
 		<dict>
 			<key>primary</key>
@@ -58,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>GSKCompounentLibraryTests</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>Utilities</key>
 		<dict>
 			<key>primary</key>
 			<true/>

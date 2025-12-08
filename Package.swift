@@ -10,19 +10,14 @@ let package = Package(
     ],
 
     products: [
-        // ✅ Design Tokens Module
         .library(
             name: "DesignTokens",
             targets: ["DesignTokens"]
         ),
-
-        // ✅ Utilities Module
         .library(
             name: "Utilities",
             targets: ["Utilities"]
         ),
-
-        // ✅ Button Component Module
         .library(
             name: "GSKButtonComponent",
             targets: ["GSKButtonComponent"]
@@ -30,20 +25,19 @@ let package = Package(
     ],
 
     targets: [
-        // ✅ Design Tokens Target
         .target(
             name: "DesignTokens",
             path: "Sources/DesignTokens"
         ),
 
-        // ✅ Utilities Target
         .target(
             name: "Utilities",
+            dependencies: [
+                "DesignTokens"
+            ], 
             path: "Sources/Utilities"
         ),
 
-        // ✅ Button Component Target
-        // Depends on both DesignTokens & Utilities
         .target(
             name: "GSKButtonComponent",
             dependencies: [

@@ -20,7 +20,7 @@ export default {
       transformGroup: "swiftui",
       buildPath: "../GSKComponentLibrary/Sources/GSKComponentLibrary/Tokens/",
         files: [{
-            destination: "SwiftUITokens.swift",
+            destination: "DesignTokens.swift",
             format: "swiftui/tokens"
           }]
     }
